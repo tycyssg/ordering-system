@@ -1,0 +1,666 @@
+{
+  "info": {
+    "_postman_id": "b4020c81-3320-4e9c-bf18-907aa87c628c",
+    "name": "DeliverySystem",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\":\"cip\",\r\n    \"secondName\":\"tud\",\r\n    \"phone\":\"0894385000\",\r\n    \"email\":\"tycy1@live.com\",\r\n    \"password\":\"tycy123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"tycy1@live.com\",\r\n    \"password\":\"tycy123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Address",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\":1,\r\n    \"addressLineOne\": \"37 griffeen\",\r\n    \"addressLineTwo\": \"glen\",\r\n    \"city\":\"Lucan\",\r\n    \"county\": \"Dublin\",\r\n    \"eircode\": \"K78CY68\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/updateAddress",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "updateAddress"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\":\"VajvT988GLGUWFlkOoITCnJIjkx78Rp1WxW36eTMF9DK37jAcRMZhjX6fT5SxenJ\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateMenu",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"menuName\":\"Meals\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/createMenu",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "createMenu"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Items To Menu",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"price\":12.5,\r\n    \"itemName\":\"Beef Noodles\",\r\n    \"itemDescription\": \"This easy Beef Stir Fry with Noodles can be made in just 20 minutes! Tender beef, fresh veggies, and noodles tossed together in a delicious savory sauce.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/addItemToMenu?menuId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "addItemToMenu"
+          ],
+          "query": [
+            {
+              "key": "menuId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateMenu With Items",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"menuName\":\"Breakfast\",\r\n    \"items\": [\r\n        {\r\n        \"price\":6.5,\r\n        \"itemName\":\"BREAKFAST BAP\",\r\n        \"itemDescription\": \"Soft bap, bacon, egg, cheddar, grilled tomato, rocket and Chef Darren's smoked apple relish.\"\r\n        },\r\n        {\r\n        \"price\":10.5,\r\n        \"itemName\":\"FULL IRISH BREAKFAST\",\r\n        \"itemDescription\": \"Bacon, Sausage, Fried Egg, Tomato, Beans, Mushrooms, Black and White Pudding, Toast.\"\r\n        },\r\n        {\r\n        \"price\":9.5,\r\n        \"itemName\":\"SMOKED SALMON SCRAMBLED EGGS\",\r\n        \"itemDescription\": \"Fluffy Scrambled Eggs\"\r\n        },\r\n        {\r\n        \"price\":6.95,\r\n        \"itemName\":\"FLANAGANS PANCAKE STACK\",\r\n        \"itemDescription\": \"Strawberry and Maple Syrup\"\r\n        },\r\n        {\r\n        \"price\":7.95,\r\n        \"itemName\":\"FLANAGANS SMOKEY BEANS ON TOAST\",\r\n        \"itemDescription\": \"Baked beans in a bacon and tomato sauce topped with Dubliner cheese.\"\r\n        },\r\n        {\r\n        \"price\":7.95,\r\n        \"itemName\":\"3 EGG OMLETTE WITH TOAST\",\r\n        \"itemDescription\": \"Choose from Ham, Cheese, Tomato, Onion\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/createMenu",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "createMenu"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Items From Menu",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/deleteItemFromMenu?itemId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "deleteItemFromMenu"
+          ],
+          "query": [
+            {
+              "key": "itemId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Specific Menu",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/viewMenu?menuId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "viewMenu"
+          ],
+          "query": [
+            {
+              "key": "menuId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Item To Cart",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"itemId\":9,\r\n    \"quantity\":1,\r\n    \"cartId\":1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/addItemToCart",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "addItemToCart"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Cart",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/viewMenu?menuId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "viewMenu"
+          ],
+          "query": [
+            {
+              "key": "menuId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Items From Cart",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/deleteItemFromCart?itemId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "deleteItemFromCart"
+          ],
+          "query": [
+            {
+              "key": "itemId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Complete Order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "        {\r\n            \"cardNumber\": \"1111222233334444\",\r\n            \"expireDate\":\"12/23\",\r\n            \"csv\":\"331\",\r\n            \"name\":\"Cip Tud\",\r\n            \"totalToPay\":22.30\r\n        }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/completeOrder",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "completeOrder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View User Details By Order Number",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/viewUserDetails?orderId=OR21991",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "viewUserDetails"
+          ],
+          "query": [
+            {
+              "key": "orderId",
+              "value": "OR21991"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Marketing message",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\": \"A marketing message\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/sendMarketingEmail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "sendMarketingEmail"
+          ],
+          "query": [
+            {
+              "key": "orderId",
+              "value": "OR21991",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delivery Completed",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "JJJetr6eDVNcrBweTTyC5sjqCZsyktH3XQ1I064LEhFj5a89dJZP17FmXf52tzA6",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\": \"A marketing message\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8085/api/sendMarketingEmail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8085",
+          "path": [
+            "api",
+            "sendMarketingEmail"
+          ],
+          "query": [
+            {
+              "key": "orderId",
+              "value": "OR21991",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

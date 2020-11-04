@@ -1,7 +1,9 @@
 # ordering-system
 College Project
 
-Port Which will start: 8085
+How to start: 
+Access: http://localhost:8085
+Import DeliverySystem.postman_collection.json - into your Postman Application
 
 How It works:
 
